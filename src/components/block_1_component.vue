@@ -1,6 +1,6 @@
 <template>
   <div class="block_1">
-    <p>Подготовка с Финансовым университетом!</p>
+    <p class="title">Подготовка с Финансовым университетом!</p>
 
     <div class="block_container">
         <div class="img_container_block_1">
@@ -21,7 +21,12 @@ export default {
 
 <style scoped>
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
-
+.title{
+  font-weight: 700;
+  font-size: 54px;
+  max-width: 850px;
+  margin: 60px auto;
+}
 .block_container{
   display: flex;
   align-items: center;
