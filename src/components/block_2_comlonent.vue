@@ -16,19 +16,19 @@
           </div>
         <div class="card" id="card_2">
           <p class="card_name">10 класс</p>
-          <div class="block_1">
+          <div class="block_1" id="viol">
             <p class="text_card">подготовка к олимпиадам</p>
           </div>
-          <div class="block_1">
+          <div class="block_1" id="viol1">
             <p class="text_card">сдача егэ</p>
           </div>
         </div>
         <div class="card" id="card_3">
           <p class="card_name">11 класс</p>
-          <div class="block_1">
+          <div class="block_1" id="green">
             <p class="text_card">подготовка к олимпиадам</p>
           </div>
-          <div class="block_1">
+          <div class="block_1" id="green1">
             <p class="text_card">сдача егэ</p>
           </div>
         </div>
@@ -43,14 +43,14 @@
         </div>
         <div class="card-" id="card-2">
           <p class="card_name1" id="card_name-medium">студенты</p>
-          <div class="block_1">
+          <div class="block_1" id="viol3">
             <p class="text_card">обучение на</p>
             <p class="text_card2">магистра</p>
           </div>
       </div>
         <div class="card-" id="card-3">
           <p class="card_name1">иностранные студенты</p>
-          <div class="block_1">
+          <div class="block_1" id="green3">
             <p class="text_card">поступление в</p>
             <p class="text_card2">вуз</p>
           </div>
@@ -83,6 +83,12 @@ export default {
 }
 #card_name-big{
   font-size: 93px;
+}
+#viol, #viol1, #viol3{
+  border: 7px solid #B285D6;
+}
+#green, #green1, #green3{
+  border: 7px solid #A4EB95;
 }
 #card_name-medium{
   font-size: 57px;
