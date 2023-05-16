@@ -1,7 +1,6 @@
 <template>
-  <div class="block_1">
+  <div class="block_1" ref="component1">
     <p class="title">Подготовка с Финансовым университетом!</p>
-
     <div class="block_container">
         <div class="img_container_block_1">
           <img src="../img/Finuniver_mainbuilding.png" class="img_block_1">
@@ -42,6 +41,7 @@ export default {
   flex-direction: column;
   justify-content: center;
   margin: 0 auto;
+    overflow: auto
 }
 .img_block_1{
   width: 90%;

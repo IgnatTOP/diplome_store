@@ -1,9 +1,9 @@
 <template>
-  <div class="block_3">
+  <div class="block_3" v-on:mousemove="moveDiv">
       <div class="block_container_1">
-        <img src="../img/Group2.svg" class="minus_svg">
-        <img src="../img/Group2.svg" class="minus_svg2">
-        <img src="../img/Group2.svg" class="minus_svg3">
+        <img src="../img/Group2.svg" class="minus_svg" :style="divStyle">
+        <img src="../img/Group2.svg" class="minus_svg2" :style="divStyle">
+        <img src="../img/Group2.svg" class="minus_svg3" :style="divStyle">
           <p class="text_container_1">Минусы самостоятельной подготовки</p>
         <p class="text_container_2">- Нехватка контроля</p>
         <p class="text_container_2">- Бессвязность получаемой</p>
@@ -11,9 +11,9 @@
         <p class="text_container_2">- Отсутствие мотивации</p>
       </div>
     <div class="block_container_2">
-      <img src="../img/Group3.svg" class="plus_svg">
-      <img src="../img/Group3.svg" class="plus_svg2">
-      <img src="../img/Group3.svg" class="plus_svg3">
+      <img src="../img/Group3.svg" class="plus_svg" :style="divStyle">
+      <img src="../img/Group3.svg" class="plus_svg2" :style="divStyle">
+      <img src="../img/Group3.svg" class="plus_svg3" :style="divStyle">
         <p class="text_container_1">Вы можете положиться на нас:</p>
       <p class="text_container_2">+ Педагоги – профессионалы своего дела</p>
       <p class="text_container_2">+ Постоянная поддержка от наставников</p>
@@ -27,7 +27,32 @@
 
 <script>
 export default {
-  name: "block_3_component"
+  name: "block_3_component",
+    data() {
+        return {
+            mouseX: 0,
+            mouseY: 0,
+            maxOffset: 20,
+        };
+    },
+    computed: {
+        divStyle() {
+            const offsetX = (this.mouseX / window.innerWidth - 0.5) * 2 * this.maxOffset;
+            const offsetY = (this.mouseY / window.innerHeight - 0.5) * 2 * this.maxOffset;
+
+            return {
+                transition: 'transform 0.3s ease-out',
+                transform: `translate3d(${offsetX}px, ${offsetY}px, 0)`,
+            };
+        }
+    },
+    methods: {
+        moveDiv(event) {
+            // обновляем положение мыши
+            this.mouseX = event.clientX;
+            this.mouseY = event.clientY;
+        }
+    }
 }
 </script>
 

@@ -1,4 +1,5 @@
 <template>
+    <Transition name="bounce">  <form_poput v-if="visible" @close_poput="close_poput"/></Transition>
   <div class="header">
     <div class="img_header_logo">
       <svg width="437" height="166" viewBox="0 0 437 166" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -12,25 +13,61 @@
       </svg>
     </div>
     <div class="menu_container">
-        <a>Все курсы</a>
-        <a>Преподаватели</a>
-        <a>Перезвоните мне</a>
+        <a @click="scroll4" class="scroll_button">Все курсы</a>
+        <a @click="scroll5" class="scroll_button">Преподаватели</a>
+        <a @click="this.visible = true" class="scroll_button">Перезвоните мне</a>
         <a>+7 (495) 249-52-49</a>
-        <a>Личный кабинет</a>
+        <a href="https://fa.ru" class="scroll_button">Личный кабинет</a>
     </div>
 
   </div>
 </template>
 
 <script>
+import form_poput from "./form_poput.vue";
+
 export default {
   name: "header_component",
+    components: {form_poput},
+    data(){
+      return{
+        visible: false,
+      }
+    },
+    methods:{
+        scroll4(){
+            this.$emit('scroll4')
+        },
+        scroll5(){
+            this.$emit('scroll5')
+        },
+        close_poput(){
+            this.visible = false
+        }
+    }
 
 }
 </script>
 
 <style scoped>
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+.bounce-enter-active {
+    animation: bounce-in 0.5s;
+}
+.bounce-leave-active {
+    animation: bounce-in 0.5s reverse;
+}
+@keyframes bounce-in {
+    0% {
+        transform: scale(0);
+    }
+    50% {
+        transform: scale(1.25);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
 .menu_container{
   display: flex;
   justify-content: space-between;
@@ -41,6 +78,18 @@ export default {
   color: #F1A33F;
   font-weight: 700;
   font-size: 30px;
+}
+.card_form{
+    width: 90%;
+    height: 200px;
+
+    background: #F1A33F;
+}
+.scroll_button{
+    cursor: pointer;
+    color: #F1A33F;
+    text-decoration: none;
+    border: none;
 }
 .header{
   margin: 0 auto;
