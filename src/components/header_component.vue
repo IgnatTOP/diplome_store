@@ -17,7 +17,7 @@
         <a @click="scroll5" class="scroll_button">Преподаватели</a>
         <a @click="this.visible = true" class="scroll_button">Перезвоните мне</a>
         <a>+7 (495) 249-52-49</a>
-        <a href="https://fa.ru" class="scroll_button">Личный кабинет</a>
+        <a href="http://www.fa.ru/Pages/Home.aspx" class="scroll_button">Личный кабинет</a>
     </div>
 
   </div>
